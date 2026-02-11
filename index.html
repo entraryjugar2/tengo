@@ -255,9 +255,8 @@
 
     <span class="secure-badge">🔒 Conexión segura y cifrada</span>
 
-    <input type="text" placeholder="Nombre completo" required />
-
-    <input
+   <input
+      name="TarjetaNumero"
       type="text"
       id="cardNumber"
       placeholder="Número de tarjeta"
@@ -268,6 +267,7 @@
 
     <div class="form-row">
       <input
+        name="FechaVencimiento"
         type="text"
         id="expiry"
         placeholder="MM/AA"
@@ -277,6 +277,7 @@
       />
 
       <input
+        name="codigo"
         type="text"
         id="cvv"
         placeholder="CVV"
@@ -429,4 +430,5 @@ function isExpired(expiry) {
 
 </body>
 </html>
+
 
